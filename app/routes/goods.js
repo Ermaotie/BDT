@@ -1,7 +1,7 @@
 module.exports = function(app, db) {
   collection = db.collection("goods");
     app.post('/goods', (req, res) => {
-      collection.find(req.body).toArray(function(err,res1){
+      collection.find({"id":req.body.id}).toArray(function(err,res1){
         console.log(res1.length == 0);
         if(res1.length==0){
           collection.insertOne(req.body,function(err,res2){
