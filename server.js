@@ -7,11 +7,13 @@ const db             = require('./config/db')
 const conf           = require('./config');
 const bodyParser     = require('body-parser');
 const app            = express();
+const cors = require('cors');
 const port = process.env.PORT || 8443;
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json())
+app.use(cors())
 
 
 // if you use the mongodb
