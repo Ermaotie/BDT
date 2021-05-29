@@ -71,4 +71,14 @@ module.exports = function(app, db) {
           }
         })
       });
+    app.delete('/user/all', (req, res) => {
+        collection.deleteMany({},function(err,res1){
+          if(err){
+            res.send('Delete failed!')
+            console.log(err)
+          } else {
+            res.send('Delete Success')
+          }
+        })
+    });
 };
