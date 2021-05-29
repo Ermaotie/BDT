@@ -44,7 +44,7 @@ module.exports = function(app, db) {
       })
     });
     app.put('/goods/:id', (req, res) => {
-      collection.update({'id':req.params.id},req.body,function(err,res1){
+      collection.updateOne({'id':req.params.id},req.body,function(err,res1){
         if(err){
           res.send('Update Failed')
         } else {

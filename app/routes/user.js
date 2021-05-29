@@ -51,7 +51,7 @@ module.exports = function(app, db) {
       });
     app.put('/user/:id', (req, res) => {
         // You'll create your note here.
-        collection.update({'id':req.params.id},req.body,function(err,res1){
+        collection.updateOne({'id':req.params.id},req.body,function(err,res1){
           if(err){
             res.send('Update Failed')
           } else {
